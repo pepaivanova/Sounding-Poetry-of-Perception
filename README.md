@@ -14,4 +14,4 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 5. Create simple web server for interaction with PD.
 6. Automatic synchronisation between soundcloud and local database.?!
 
-
+## HERE WE GO AGAIN
