@@ -2,12 +2,12 @@
 
 sounds.db - main database file of the project
 
-table "sounding" should look like this
+Table "sounding" should look like this
 
------------------------------------------------------------------------------
-| name  | file_name | length    | local_pwd | soundcloud_url | pd_parameter |
------------------------------------------------------------------------------
-|       |           |           |           |                |              |
+
+| name  | file_name | length    | local_pwd | soundcloud_url               | pd_parameter |
+|:-----:|:---------:|:---------:|:---------:|:----------------------------:|:------------:|
+| abc   | abc.mp3   | 0.15      | ./mp3     | http://soundcloud.com        | max, min     |
 
 
 ## To do list
