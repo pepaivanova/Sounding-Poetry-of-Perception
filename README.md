@@ -1,7 +1,7 @@
-sounding-poetry-of-perception
+Sounding poetry of perception
 =============================
 
-# DESCRIPTION
+## Description
 
 In Sounding Poetry, textual descriptions become a score for sound compositions, where different words correspond to field recordings and sounds. The created soundscape is composed by one’s interpretation of his/her own visual experience into words.
 
@@ -35,3 +35,15 @@ Links projects that look good as a starting point:
 ## Status - just started
 
 (Just started, Development, Testing, Production)
+
+## Dependencies
+
+Pure Data (pd)
+
+Python 2.7
+
+SQLite (eventually)
+
+## Temporary links
+
+[Using Forms in python](http://raspberrywebserver.com/cgiscripting/web-forms-with-python.html)
