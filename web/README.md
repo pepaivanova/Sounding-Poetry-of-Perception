@@ -1,3 +1,5 @@
+
+
 Dependencies
 ------------
 
@@ -28,4 +30,11 @@ To run the application:
 source virtual/bin/activate
 python app.py
 ```
+
+Database
+--------
+
+Connecting to a local sqlite database following instructions at
+http://flask.pocoo.org/docs/patterns/sqlalchemy/#declarative
+
 
