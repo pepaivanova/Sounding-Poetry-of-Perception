@@ -1,7 +1,7 @@
 import os.path as p
 
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy.orm import scoped_session, sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 #default_db_file = p.join(p.dirname(__file__), 'sounds.db')
@@ -18,6 +18,11 @@ class Sound(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(50), unique=True)
     filepath = Column(String(50), )
+
+class Word(Base):
+    __tablename__ = 'words'
+    id = Column(Integer, primary_key=True)
+    sound_id = Column(Integer, ForeignKey('sounds.id'))
 
 def connect_db(db_file=None):
     if db_file is None:
