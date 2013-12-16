@@ -9,12 +9,30 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 
 ## Goals
 
-1. Use Pure Data to mix .mp3 files.
-2. Create simple database with .mp3 files.
-3. Synchronise database with soundcloud. - OSC?
-4. Use Pure Data to stream soundscapes from soundcloud and mix them.
-5. Create simple web server for interaction with PD.
-6. Automatic synchronisation between soundcloud and local database.?!
+* Use Pure Data to mix .mp3 files.
+* Create simple database with .mp3 files.
+* Synchronise database with soundcloud. - OSC?
+* Use Pure Data to stream soundscapes from soundcloud and mix them.
+* Create simple web server for interaction with PD.
+* Automatic synchronisation between soundcloud and local database.?!
+
+## Status - just started
+
+(Just started, Development, Testing, Production)
+
+## Dependencies
+
+Python 2.7
+
+* [Pure Data (pd-extended)](http://puredata.info/downloads/pd-extended)
+* [SQLAlchemy](http://www.sqlalchemy.org)
+* [Flask](http://flask.pocoo.org)
+
+## Temporary links
+
+* [Using Forms in python](http://raspberrywebserver.com/cgiscripting/web-forms-with-python.html)
+* [Simple pd-extended webclient](http://puredata.info/docs/tutorials/SimplePdExtendedWebclient)
+* [Make Python and Pure Data communicate on the Raspberry Pi](http://guitarextended.wordpress.com/2012/11/03/make-python-and-pure-data-communicate-on-the-raspberry-pi/)
 
 ## Considerations
 
@@ -27,24 +45,6 @@ Few available options are:
 
 Links projects that look good as a starting point:
 
-1. [Make Python and Pure Data communicate on the Raspberry Pi](http://guitarextended.wordpress.com/2012/11/03/make-python-and-pure-data-communicate-on-the-raspberry-pi/)
-2. [pyata](https://code.google.com/p/pyata/)
 3. [port](https://github.com/thisconnect/port/blob/master/readme.md)
 4. [mxdublin](http://www.le-son666.com/software/mxdublin/download.html)
 
-## Status - just started
-
-(Just started, Development, Testing, Production)
-
-## Dependencies
-
-Pure Data (pd)
-
-Python 2.7
-
-SQLite (eventually)
-
-## Temporary links
-
-[Using Forms in python](http://raspberrywebserver.com/cgiscripting/web-forms-with-python.html)
-[Simple pd-extended webclient](http://puredata.info/docs/tutorials/SimplePdExtendedWebclient)
