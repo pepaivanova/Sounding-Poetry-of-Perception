@@ -47,3 +47,4 @@ SQLite (eventually)
 ## Temporary links
 
 [Using Forms in python](http://raspberrywebserver.com/cgiscripting/web-forms-with-python.html)
+[Simple pd-extended webclient](http://puredata.info/docs/tutorials/SimplePdExtendedWebclient)
