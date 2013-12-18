@@ -7,14 +7,16 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 
 ## Motivation
 
+No particular reason
+
 ## Goals
 
+* Create simple web server for interaction with PD.
 * Use Pure Data to mix .mp3 files.
 * Create simple database with .mp3 files.
-* Synchronise database with soundcloud. - OSC?
-* Use Pure Data to stream soundscapes from soundcloud and mix them.
-* Create simple web server for interaction with PD.
-* Automatic synchronisation between soundcloud and local database.?!
+* Synchronise database with soundcloud or other web platform. - OSC?
+* Use Pure Data to stream soundscapes from web platform and mix them.
+* Automatic synchronisation between web platform and local database.?!
 
 ## Status - just started
 
@@ -26,14 +28,18 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 * [Pure Data (pd-extended)](http://puredata.info/downloads/pd-extended)
 * [SQLAlchemy](http://www.sqlalchemy.org)
 * [Flask](http://flask.pocoo.org)
+* [libpd](http://libpd.cc)
 
 ## Temporary links
 
+* [Python API for libpd](https://github.com/libpd/libpd/wiki/Python-API)
 * [Simple pd-extended webclient](http://puredata.info/docs/tutorials/SimplePdExtendedWebclient)
 * [Make Python and Pure Data communicate on the Raspberry Pi](http://guitarextended.wordpress.com/2012/11/03/make-python-and-pure-data-communicate-on-the-raspberry-pi/)
 * [Using Forms in python](http://raspberrywebserver.com/cgiscripting/web-forms-with-python.html)
 
 ## Considerations
+
+We should stick to Python solution with integrated dependencies.
 
 There are many options for communication with Pure Data and we should consider the best way for the project.
 Few available options are:
