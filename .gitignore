@@ -1,3 +1,4 @@
 *.py[o|c]
 sounds.db
 /web/virtual/
+/pd/.ropeproject
