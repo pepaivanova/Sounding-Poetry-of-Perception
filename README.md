@@ -28,10 +28,10 @@ No particular reason
 * [Pure Data (pd-extended)](http://puredata.info/downloads/pd-extended)
 * [SQLAlchemy](http://www.sqlalchemy.org)
 * [Flask](http://flask.pocoo.org)
-* [libpd](http://libpd.cc)
 
 ## Temporary links
 
+* [libpd](http://libpd.cc)
 * [Python API for libpd](https://github.com/libpd/libpd/wiki/Python-API)
 * [Simple pd-extended webclient](http://puredata.info/docs/tutorials/SimplePdExtendedWebclient)
 * [Make Python and Pure Data communicate on the Raspberry Pi](http://guitarextended.wordpress.com/2012/11/03/make-python-and-pure-data-communicate-on-the-raspberry-pi/)
