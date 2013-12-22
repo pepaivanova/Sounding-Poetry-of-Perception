@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from send2Pd import *
 app = Flask(__name__)
 
 
@@ -8,8 +9,12 @@ app = Flask(__name__)
 def poetry(name=None):
     error = None
     if request.method == 'POST':
-	# return entered text in to the form to the page
-        return render_template('index.html', result=request.form['poetry'])
+	# get text from the form 
+        text=request.form['poetry']
+        # send text to pure data
+        send2Pd(text)
+        # show text on the bottom of page
+        return render_template('index.html', result=text)
     else:
         error = 'Error !'
     #
