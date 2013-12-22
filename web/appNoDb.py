@@ -19,7 +19,8 @@ def about():
 def poetry(name=None):
     error = None
     if request.method == 'POST':
-        return 'It works !'
+        return render_template('index.html', result=request.form['poetry'])
+        # return 'It works !'
     else:
         error = 'Error!'
     #

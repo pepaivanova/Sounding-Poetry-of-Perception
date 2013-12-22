@@ -3,8 +3,11 @@
         <title>sounding poetry of perception</title>
     </head>
     <body>
-        <form action="/about" method="GET">
-            <input type="text" name="poetry">
+    {% if result %}
+	You entered: {{ result }}
+    {% endif %}
+        <form action="/poetry" method="POST">
+            <input type="text" name="poetry" />
 	    <input type="submit" value="Submit">
         </form>
     </body>
