@@ -18,3 +18,4 @@ def setVolume():
 if __name__ == "__main__":
     audioOn()
     setVolume()
+    send2Pd("test")
