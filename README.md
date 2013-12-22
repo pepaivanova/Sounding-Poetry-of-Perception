@@ -18,7 +18,7 @@ No particular reason
 * Use Pure Data to stream soundscapes from web platform and mix them.
 * Automatic synchronisation between web platform and local database.?!
 
-## Status - just started
+## Status - development 
 
 (Just started, Development, Testing, Production)
 
@@ -28,6 +28,7 @@ No particular reason
 * [Pure Data (pd-extended)](http://puredata.info/downloads/pd-extended)
 * [SQLAlchemy](http://www.sqlalchemy.org)
 * [Flask](http://flask.pocoo.org)
+* Pure Data netsend for communication
 
 ## Temporary links
 
@@ -44,9 +45,9 @@ We should stick to Python solution with integrated dependencies.
 There are many options for communication with Pure Data and we should consider the best way for the project.
 Few available options are:
 
-1. Pure Data + Python
-2. Pure Data + Node.js
-3. Pure Data + Jython
+* Pure Data + Python
+* Pure Data + Node.js
+* Pure Data + Jython
 
 Links to projects that look good as a starting point:
 
