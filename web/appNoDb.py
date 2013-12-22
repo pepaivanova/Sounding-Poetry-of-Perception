@@ -3,28 +3,22 @@ from flask import render_template
 from flask import request
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello World - Rado !'
 
-@app.route('/project')
-def projects():
-    return 'The project page'
-
-@app.route('/about')
-def about():
-    return 'The about page'
-
-@app.route('/poetry', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def poetry(name=None):
     error = None
     if request.method == 'POST':
+	# return entered text in to the form to the page
         return render_template('index.html', result=request.form['poetry'])
-        # return 'It works !'
     else:
-        error = 'Error!'
+        error = 'Error !'
     #
     return render_template('index.html', name=name)
+
+@app.route('/about')
+def about():
+    # open About page, where should be described the project
+    return render_template('about.html')
 
 
 if __name__ == '__main__':
