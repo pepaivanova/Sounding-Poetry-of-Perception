@@ -1,5 +1,6 @@
 *.py[o|c]
 *.swp
+*.py~
 sounds.db
 /web/virtual/
 /pd/.ropeproject
