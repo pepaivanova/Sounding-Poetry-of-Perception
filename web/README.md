@@ -1,5 +1,4 @@
 
-
 Dependencies
 ------------
 
@@ -13,8 +12,8 @@ Installation
 To deploy the webapp initially:
 ```
 # checkout the code
-git clone https://github.com/pepaivanova/sounding-poetry-of-perception.git
-cd sounding-poetry-of-perception/web
+git clone https://github.com/pepaivanova/Sounding-Poetry-of-Perception.git
+cd Sounding-Poetry-of-Perception/web
 
 # create your virtualenv (in sounding-poetry-of-perception/web)
 virtualenv virtual
@@ -28,7 +27,7 @@ To run the application:
 
 ```
 source virtual/bin/activate
-python app.py
+python appNoDb.py
 ```
 
 Database
