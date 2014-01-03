@@ -1,4 +1,3 @@
-
 Dependencies
 ------------
 
@@ -22,6 +21,21 @@ virtualenv virtual
 source virtual/bin/activate
 pip install -r requirements.txt
 ```
+
+Problem with pip (Could not fetch URL: xxxxxx: There was a problem confirming the ssl certificate: <urlopen error [Errno 1] _ssl.c:504: error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed>)
+
+# the simplest fix is here on the last comment:
+
+https://groups.google.com/forum/#!topic/beagleboard/aSlPCNYcVjw
+
+bdha...@gmail.com 	
+9/6/13
+The problem is the internal clock in the BBB. 
+If you run 
+'''
+ntpdate -b -s -u pool.ntp.org
+'''
+you won't get the ssl error. However, you will have to do this every time you want to use pip. 
 
 To run the application:
 
