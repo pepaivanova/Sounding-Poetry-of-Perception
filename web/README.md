@@ -107,16 +107,32 @@ pip install -r requirements.txt
 
 Run pd-extended without gui (not tested yet)
 ```
-../pd/pdextended -nogui -noadc -alsa -open startSoundFromPython.pd &
+pd-extended -nogui -noadc -alsa -open ../pd/startSoundFromPython.pd &
 ```
 
 Run application without DB
 ```
 source virtual/bin/activate
-python appNoDb.py
+python appNoDb.py &
 ```
 
-In browser type url: http://localhost:5000
+Check IP address of Raspberry Pi
+```
+ifconfig -a
+```
+
+I'm using wlan0 adapter and currently the IP is set to 192.168.1.105
+
+In browser type url: http://192.168.1.105:5000
+
+
+Edit pd-exteded patch on local computer via ssh
+-----------------------------------------------
+
+Pure data patches could be edited remotely if we use ssh with X issuing:
+```
+ssh -Y pi@192.168.1.105 pd-extended
+```
 
 
 Database
