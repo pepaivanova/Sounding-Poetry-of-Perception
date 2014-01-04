@@ -3,6 +3,7 @@ Dependencies
 
  * python2.7
  * flask
+ * sqlalchemy
  * virtualenv
 
 Installation
@@ -48,6 +49,74 @@ If you run
 ntpdate -b -s -u pool.ntp.org
 ```
 you won't get the ssl error. However, you will have to do this every time you want to use pip. 
+
+Raspberry Pi
+------------
+
+Using Raspbian from: http://downloads.raspberrypi.org/raspbian_latest
+
+Default login: 	pi / raspberry
+
+Install pd-extended following the instructions from [here](http://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf).
+
+In summary:
+```
+sudo nano /etc/apt/sources.list
+# -copy/paste this line to the list(right-click to paste):
+deb-src http://archive.raspbian.org/raspbian wheezy main contrib non-free rpi
+#ctrl+o, Enter (to save). ctrl+x (to exit)
+
+sudo apt-get update
+wget https://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf/releases/1.0/Pd-0.43.3-extended-20121004.deb
+sudo dpkg -i Pd-0.43.3-extended-20121004.deb
+sudo apt-get -f install
+# it should be installed. For root priorities:
+sudo chmod 4755 /usr/bin/pd-extended 
+```
+
+Install puredata-utils (needed for 'pdsend' command)
+```
+sudo apt-get install puredata-utils
+```
+
+Install python virtualenv
+```
+sudo apt-get install python-virtualenv
+```
+
+Clone Sounding-Poetry-of-Perception repository
+```
+mkdir git
+cd git
+git clone https://github.com/pepaivanova/Sounding-Poetry-of-Perception.git
+cd Sounding-Poetry-of-Perception
+git checkout -m master
+```
+
+Create virutal environement in web folder:
+```
+cd web
+virtualenv virtual
+```
+
+Install Flask and SQAlchemy
+```
+source virtual/bin/activate
+pip install -r requirements.txt
+```
+
+Run pd-extended without gui (not tested yet)
+```
+../pd/pdextended -nogui -noadc -alsa -open startSoundFromPython.pd &
+```
+
+Run application without DB
+```
+source virtual/bin/activate
+python appNoDb.py
+```
+
+In browser type url: http://localhost:5000
 
 
 Database
