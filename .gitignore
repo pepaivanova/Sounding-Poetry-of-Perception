@@ -3,5 +3,6 @@
 *.py~
 sounds.db
 /web/virtual/
+/web/build/
 /pd/.ropeproject
 /docs

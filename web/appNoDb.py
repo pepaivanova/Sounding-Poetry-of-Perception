@@ -1,7 +1,8 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-from send2Pd import *
+from send2Pd import send2Pd 
+from send2Pd import audioOn
 app = Flask(__name__)
 
 
@@ -11,6 +12,8 @@ def poetry(name=None):
     if request.method == 'POST':
 	# get text from the form 
         text=request.form['poetry']
+        # turn on audio
+        audioOn()
         # send text to pure data
         send2Pd(text)
         # show text on the bottom of page
@@ -27,4 +30,5 @@ def about():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.debug = True
+    app.run(host='0.0.0.0')

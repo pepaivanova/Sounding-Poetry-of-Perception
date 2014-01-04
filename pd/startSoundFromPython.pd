@@ -1,4 +1,4 @@
-#N canvas 618 240 580 401 10;
+#N canvas 616 255 580 401 10;
 #X obj 305 213 netreceive 3000;
 #X obj 305 267 route 0 1;
 #X obj 305 299 s audio_on_off;
