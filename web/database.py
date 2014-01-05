@@ -1,38 +1,59 @@
+import sys
+import os
 import os.path as p
+from datetime import datetime
 
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import scoped_session, sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-#default_db_file = p.join(p.dirname(__file__), 'sounds.db')
-default_db_file = p.abspath(p.join(p.dirname(__file__), 'sounds.db'))
-
-
-db_session = None
 engine = None
+db_session = None
 
 Base = declarative_base()
 
-class Sound(Base):
-    __tablename__ = 'sounds'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(50), unique=True)
-    filepath = Column(String(50), )
-
-class Word(Base):
+class Poetry(Base):
     __tablename__ = 'words'
     id = Column(Integer, primary_key=True)
-    sound_id = Column(Integer, ForeignKey('sounds.id'))
+    sounded_at = Column(DateTime)
+    poetry = Column(String(50), unique=True)
+
+
+def store_poetry(poetry):
+    global db_session
+    p = Poetry()
+    p.sounded_at = datetime.utcnow()
+    p.poetry = poetry
+    db_session.add(p)
+    db_session.commit()
 
 def connect_db(db_file=None):
     if db_file is None:
-        db_file = default_db_file
+        db_file = p.abspath(p.join(p.dirname(__file__), 'sounds.db'))
+
     global engine, db_session
     engine = create_engine('sqlite:////%s' % (db_file, ), convert_unicode=True)
     db_session = scoped_session(sessionmaker(autocommit=False,
-                                             autoflush=False,
-                                             bind=engine))
+                                         autoflush=False,
+                                         bind=engine))
 
-def init_db():
-    connect_db()
+def create_db(engine):
     Base.metadata.create_all(bind=engine)
+
+if __name__ == '__main__':
+    db_file = p.abspath(p.join(os.getcwd(), 'test_database.db'))
+    if p.isfile(db_file):
+        p.unlink(db_file)
+
+    connect_db(db_file)
+    print "Engine: ", engine
+    create_db(engine)
+
+    store_poetry('to be or not to be')
+    
+    db_session.commit()
+
+    all_poetry = db_session.query(Poetry).all()
+    for pp in all_poetry:
+        print "%s spoken at %s" % (pp.poetry, pp.sounded_at)
+
