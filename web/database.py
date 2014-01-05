@@ -13,7 +13,7 @@ db_session = None
 Base = declarative_base()
 
 class Poetry(Base):
-    __tablename__ = 'words'
+    __tablename__ = 'poetry'
     id = Column(Integer, primary_key=True)
     sounded_at = Column(DateTime)
     poetry = Column(String(50), unique=True)

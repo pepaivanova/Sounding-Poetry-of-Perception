@@ -1,10 +1,16 @@
+import os
+import os.path as p
+
 from flask import Flask
 from flask import render_template
 from flask import request
+import database
 from send2Pd import send2Pd 
 from send2Pd import audioOn
 app = Flask(__name__)
 
+db_file = p.abspath(p.join(os.getcwd(), 'sounds.db'))
+database.connect_db(db_file)
 
 @app.route('/', methods=['POST', 'GET'])
 def poetry(name=None):
@@ -12,6 +18,7 @@ def poetry(name=None):
     if request.method == 'POST':
 	# get text from the form 
         text=request.form['poetry']
+        database.store_poetry(text)
         # turn on audio
         audioOn()
         # send text to pure data
@@ -28,6 +35,14 @@ def about():
     # open About page, where should be described the project
     return render_template('about.html')
 
+@app.route('/history')
+def history():
+    all_ = database.db_session.query(database.Poetry).all()
+    return '<br>'.join(p.poetry for p in all_)
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    database.db_session.remove()
 
 if __name__ == '__main__':
     app.debug = True
