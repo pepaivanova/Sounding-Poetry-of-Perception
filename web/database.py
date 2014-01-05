@@ -46,7 +46,7 @@ if __name__ == '__main__':
         p.unlink(db_file)
 
     connect_db(db_file)
-    print "Engine: ", engine
+    print("Engine: ", engine)
     create_db(engine)
 
     store_poetry('to be or not to be')
@@ -55,5 +55,5 @@ if __name__ == '__main__':
 
     all_poetry = db_session.query(Poetry).all()
     for pp in all_poetry:
-        print "%s spoken at %s" % (pp.poetry, pp.sounded_at)
+        print("%s spoken at %s" % (pp.poetry, pp.sounded_at))
 
