@@ -14,3 +14,7 @@ Pure data uses pdsend and pdreceive to send and receive those messages.
 
 Keep it simple.
 
+Pure Data file format
+---------------------
+
+[PdFileFormat](http://puredata.info/docs/developer/PdFileFormat)
