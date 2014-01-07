@@ -3,11 +3,18 @@ Sounding poetry of perception
 
 ## Description
 
-In Sounding Poetry, textual descriptions become a score for sound compositions, where different words correspond to field recordings and sounds. The created soundscape is composed by one’s interpretation of his/her own visual experience into words.
+As time goes by the project get clearer. Actually the Sounding Poetry is a device, where anyone could describe his visual perception on given art in written form. The device takes the input text as a raw data and generates unique soundscape according the text. At the end small thermal printer prints the message on a paper.
+
+## Hardware
+
+* Raspberry Pi ([Raspbian](http://www.raspbian.org) + [pd-extended](http://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf))
+* 7'' TV/Monitor with A/V input
+* bluethooth keyboard / usb keyboard
+* usb wifi adapter (realtek)
 
 ## Motivation
 
-No particular reason
+In Sounding Poetry, textual descriptions become a score for sound compositions, where different words correspond to field recordings and sounds. The created soundscape is composed by one’s interpretation of his/her own visual experience into words.
 
 ## Goals
 
@@ -24,33 +31,12 @@ No particular reason
 
 ## Dependencies
 
-* Python 2.7
+* Python > 2.7
 * [Pure Data (pd-extended)](http://puredata.info/downloads/pd-extended)
-* [SQLAlchemy](http://www.sqlalchemy.org)
 * [Flask](http://flask.pocoo.org)
+* [SQLAlchemy](http://www.sqlalchemy.org)
 * Pure Data netsend for communication
 
-## Temporary links
+## Special thanks to:
 
-* [libpd](http://libpd.cc)
-* [Python API for libpd](https://github.com/libpd/libpd/wiki/Python-API)
-* [Simple pd-extended webclient](http://puredata.info/docs/tutorials/SimplePdExtendedWebclient)
-* [Make Python and Pure Data communicate on the Raspberry Pi](http://guitarextended.wordpress.com/2012/11/03/make-python-and-pure-data-communicate-on-the-raspberry-pi/)
-* [Using Forms in python](http://raspberrywebserver.com/cgiscripting/web-forms-with-python.html)
-
-## Considerations
-
-We should stick to Python solution with integrated dependencies.
-
-There are many options for communication with Pure Data and we should consider the best way for the project.
-Few available options are:
-
-* Pure Data + Python
-* Pure Data + Node.js
-* Pure Data + Jython
-
-Links to projects that look good as a starting point:
-
-3. [port](https://github.com/thisconnect/port/blob/master/readme.md)
-4. [mxdublin](http://www.le-son666.com/software/mxdublin/download.html)
-
+Kiril Zyapkov, Miller Puckette (Pure Data), Guido van Rossum (python), Armin Ronacher (Flask), Michael Bayer (SQLAlchemy)
