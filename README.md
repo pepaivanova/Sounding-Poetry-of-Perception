@@ -9,7 +9,7 @@ As time goes by the project get clearer. Actually the Sounding Poetry is a devic
 
 * Raspberry Pi ([Raspbian](http://www.raspbian.org) + [pd-extended](http://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf))
 * 7'' TV/Monitor with A/V input
-* bluethooth keyboard / usb keyboard
+* bluetooth keyboard & mouse
 * usb wifi adapter (realtek)
 
 ## Motivation
@@ -39,4 +39,4 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 
 ## Special thanks to:
 
-Kiril Zyapkov, Miller Puckette (Pure Data), Guido van Rossum (python), Armin Ronacher (Flask), Michael Bayer (SQLAlchemy)
+[Kiril Zyapkov](https://github.com/kzyapkov), [Miller Puckette](http://en.wikipedia.org/wiki/Miller_Puckette) (Pure Data), [Guido van Rossum](http://en.wikipedia.org/wiki/Guido_van_Rossum) (python), [Armin Ronacher](https://twitter.com/mitsuhiko) (Flask), [Michael Bayer](https://twitter.com/zzzeek) (SQLAlchemy)
