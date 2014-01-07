@@ -3,7 +3,7 @@ Sounding poetry of perception
 
 ## Description
 
-As time goes by the project get clearer. Actually the Sounding Poetry is a device, where anyone could describe his visual perception on given art in written form. The device takes the input text as a raw data and generates unique soundscape according the text. At the end small thermal printer prints the message on a paper.
+As time goes by the project is getting clearer. Actually the Sounding Poetry is a device, where anyone could describe his visual perception on given art in written form. The device takes the input text as a raw data and generates unique soundscape according the text. At the end small thermal printer prints the message on a paper.
 
 ## Hardware
 
