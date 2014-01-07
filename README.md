@@ -39,4 +39,4 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 
 ## Special thanks to:
 
-[Kiril Zyapkov](https://github.com/kzyapkov), [Miller Puckette](http://en.wikipedia.org/wiki/Miller_Puckette) (Pure Data), [Guido van Rossum](http://en.wikipedia.org/wiki/Guido_van_Rossum) (python), [Armin Ronacher](https://twitter.com/mitsuhiko) (Flask), [Michael Bayer](https://twitter.com/zzzeek) (SQLAlchemy)
+[Kiril Zyapkov](https://github.com/kzyapkov), [Miller Puckette](http://en.wikipedia.org/wiki/Miller_Puckette) (Pure Data), [Guido van Rossum](http://en.wikipedia.org/wiki/Guido_van_Rossum) (Python), [Armin Ronacher](https://twitter.com/mitsuhiko) (Flask), [Michael Bayer](https://twitter.com/zzzeek) (SQLAlchemy)
