@@ -6,8 +6,12 @@ def send2Pd(message=''):
     # Send a message to Pd
     os.system("echo '" + message + "' | pdsend 3000")
 
-def audioOn():
-    message = '0 1;'    # Id=0 (DSP), message=1 (turn it on)
+def dspOn():
+    message = 'dspOn;'    # DSP turns On
+    send2Pd(message)
+
+def dspOff():
+    message = 'dspOff;'   # DSP turns Off
     send2Pd(message)
 
 def setVolume():
@@ -16,6 +20,6 @@ def setVolume():
     send2Pd(message)
 
 if __name__ == "__main__":
-    audioOn()
-    setVolume()
-    send2Pd("test")
+    dspOn()
+    send2Pd("play;")
+    # dspOff()
