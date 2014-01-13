@@ -7,10 +7,31 @@ As time goes by the project is getting clearer. Actually the Sounding Poetry is 
 
 ## Hardware
 
+* This project uses old laptop Asus AspireOne + Thermal Printer COM-10438
+
+Initially we have decided to use following hardware:
+
 * Raspberry Pi ([Raspbian](http://www.raspbian.org) + [pd-extended](http://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf))
 * 7'' TV/Monitor with A/V input
 * bluetooth keyboard & mouse
 * usb wifi adapter (realtek)
+
+problems with Raspberry Pi hardware:
+
+* low video quality from RCA output (small monitor with HDMI is expensive)
+* there is no really small usb keyboard
+
+You could see how to install the project on Raspberry Pi in web/README_Pi.md
+
+Another hardware that we have tried is Olinuxino A13 + WiFi.
+The system has 10'' screen with touch screen and the quality is really good.
+There are problems with the debian libraries for pure data.
+Some of the libraries are missing and on pd works, pd-extended should be
+compiled from source, but there are missing libraries, which can't be updated
+with the image provided from olimex.
+
+Therefore we decided to use really small laptop with x86 architecture to finish
+the project. This could be second life for such small notebooks :)
 
 ## Motivation
 
@@ -25,7 +46,7 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 * Use Pure Data to stream soundscapes from web platform and mix them.
 * Automatic synchronisation between web platform and local database.?!
 
-## Status - development 
+## Status - development
 
 (Just started, Development, Testing, Production)
 
