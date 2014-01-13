@@ -21,7 +21,7 @@ problems with Raspberry Pi hardware:
 * low video quality from RCA output (small monitor with HDMI is expensive)
 * there is no really small usb keyboard
 
-You could see how to install the project on Raspberry Pi in web/README_Pi.md
+You could see how to install the project on Raspberry Pi in [README_Pi.md](web/README_Pi.md)
 
 Another hardware that we have tried is Olinuxino A13 + WiFi.
 The system has 10'' screen with touch screen and the quality is really good.
@@ -55,9 +55,20 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 * Python > 2.7
 * [Pure Data (pd-extended)](http://puredata.info/downloads/pd-extended)
 * [Flask](http://flask.pocoo.org)
+* [SQLite3](http://www.sqlite.org)
 * [SQLAlchemy](http://www.sqlalchemy.org)
 * Pure Data netsend for communication
 
 ## Special thanks to:
 
-[Kiril Zyapkov](https://github.com/kzyapkov), [Miller Puckette](http://en.wikipedia.org/wiki/Miller_Puckette) (Pure Data), [Guido van Rossum](http://en.wikipedia.org/wiki/Guido_van_Rossum) (Python), [Armin Ronacher](https://twitter.com/mitsuhiko) (Flask), [Michael Bayer](https://twitter.com/zzzeek) (SQLAlchemy)
+[Kiril Zyapkov](https://github.com/kzyapkov)
+
+[Miller Puckette](http://en.wikipedia.org/wiki/Miller_Puckette) (Pure Data)
+
+[Guido van Rossum](http://en.wikipedia.org/wiki/Guido_van_Rossum) (Python)
+
+[Armin Ronacher](https://twitter.com/mitsuhiko) (Flask)
+
+[Dwayne Richard Hipp](http://en.wikipedia.org/wiki/D._Richard_Hipp) (SQLite)
+
+[Michael Bayer](https://twitter.com/zzzeek) (SQLAlchemy)
