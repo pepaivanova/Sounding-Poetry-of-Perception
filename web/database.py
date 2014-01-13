@@ -38,10 +38,10 @@ def connect_db(db_file=None):
                                          bind=engine))
 
 def create_db(engine):
-    Base.metadata.create_all(bind=engine)
+    Base.metadata.create_all(bind=engine, checkfirst=True)
 
 if __name__ == '__main__':
-    db_file = p.abspath(p.join(os.getcwd(), 'test_database.db'))
+    db_file = p.abspath(p.join(os.getcwd(), 'sounds.db'))
     if p.isfile(db_file):
         p.unlink(db_file)
 
