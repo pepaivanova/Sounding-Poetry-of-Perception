@@ -6,7 +6,8 @@ from flask import render_template
 from flask import request
 import database
 from send2Pd import send2Pd 
-from send2Pd import audioOn
+from send2Pd import dspOn
+from send2Pd import dspOff
 app = Flask(__name__)
 
 db_file = p.abspath(p.join(os.getcwd(), 'sounds.db'))
@@ -20,7 +21,7 @@ def poetry(name=None):
         text=request.form['poetry']
         database.store_poetry(text)
         # turn on audio
-        audioOn()
+        dspOn()
         # send text to pure data
         send2Pd(text)
         # show text on the bottom of page
