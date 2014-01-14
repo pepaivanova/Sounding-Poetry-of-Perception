@@ -10,10 +10,10 @@ class Poetry(Base):
     __tablename__ = 'poetry'
     id = Column(Integer, primary_key=True)
     sounded_at = Column(DateTime)
-    poetry = Column(String(50), unique=True)
+    poetry = Column(String(50), unique=False)
 
 # Create engine that stores data in sounds.db
 engine = create_engine('sqlite:///sounds.db')
 
-# Create all tables in the engline 
+# Create all tables in the engline
 Base.metadata.create_all(engine)
