@@ -5,7 +5,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import database
-from send2Pd import send2Pd 
+from send2Pd import send2Pd
 from send2Pd import dspOn
 from send2Pd import dspOff
 app = Flask(__name__)
@@ -17,7 +17,7 @@ database.connect_db(db_file)
 def poetry(name=None):
     error = None
     if request.method == 'POST':
-	# get text from the form 
+	# get text from the form
         text=request.form['poetry']
         database.store_poetry(text)
         # turn on audio

@@ -6,8 +6,8 @@
 	<h1>Sounding poetry of perception</h1>
 	<p>Please enter text to hear heaven sounds:</p>
         <form action="/" method="POST">
-            <input type="text" name="poetry" />
-	    <input type="submit" value="Submit">
+            <input type="text" name="poetry" size="40" value="Please enter Your text here." autofocus>
+	        <input type="submit" value="Submit">
         </form>
         {% if result %}
 	    You entered: {{ result }}
