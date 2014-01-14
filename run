@@ -1,0 +1,5 @@
+#/bin/bash
+pdextended -nogui -noadc -open ./pd/startSoundFromPython.pd &
+cd web
+source virtual/bin/activate
+python app.py &
