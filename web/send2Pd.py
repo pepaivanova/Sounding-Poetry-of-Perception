@@ -2,11 +2,17 @@ import os
 
 # (Your own Python script that does whatever you need)
 
-def startPd():
-    os.system('pd-extended &')
+def checkPdStarted(processname):
+    tmp = os.popen("ps -Af").read()
+    proccount = tmp.count(processname)
+    if proccount > 0:
+        return True
+    # process doesn't exist
+    return False
 
-def stopPd():
-    os.system('pkill pd-extended')
+def startStopPd(puredata):
+    # start / stop Pd process
+    os.system(puredata)
 
 def send2Pd(message=''):
     # Send a message to Pd
@@ -24,3 +30,4 @@ if __name__ == "__main__":
     dspOn()
     send2Pd("play;")
     # dspOff()
+    print(checkPdStarted('pdextended'))
