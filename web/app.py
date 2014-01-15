@@ -5,6 +5,8 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import database
+from send2Pd import checkPdStarted
+from send2Pd import startStopPd
 from send2Pd import send2Pd
 from send2Pd import dspOn
 from send2Pd import dspOff
@@ -12,6 +14,14 @@ app = Flask(__name__)
 
 db_file = p.abspath(p.join(os.getcwd(), 'sounds.db'))
 database.connect_db(db_file)
+
+# check if pure data is running and if not start it
+if checkPdStarted('pdextended'):
+    print("Pure Data is running")
+else:
+    startStopPd('pdextended -nogui -noadc -open ../pd/startSoundFromPython.pd &')
+    print("Pure Data started")
+
 
 @app.route('/', methods=['POST', 'GET'])
 def poetry(name=None):
