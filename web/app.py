@@ -34,6 +34,9 @@ def poetry(name=None):
         dspOn()
         # send text to pure data
         send2Pd(text)
+        # if Stop sound pressed send dspOff() message
+        # if request.form['sound_off'] == 'Sound OFF':
+        #    dspOff()
         # show text on the bottom of page
         return render_template('index.html', result=text)
     else:
