@@ -2,6 +2,12 @@ import os
 
 # (Your own Python script that does whatever you need)
 
+def startPd():
+    os.system('pd-extended &')
+
+def stopPd():
+    os.system('pkill pd-extended')
+
 def send2Pd(message=''):
     # Send a message to Pd
     os.system("echo '" + message + ";" + "' | pdsend 3000")
