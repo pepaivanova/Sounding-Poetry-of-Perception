@@ -16,7 +16,7 @@ class Poetry(Base):
     __tablename__ = 'poetry'
     id = Column(Integer, primary_key=True)
     sounded_at = Column(DateTime)
-    poetry = Column(String(50), unique=True)
+    poetry = Column(String(50), unique=False)
 
 
 def store_poetry(poetry):
@@ -33,6 +33,9 @@ def connect_db(db_file=None):
 
     global engine, db_session
     engine = create_engine('sqlite:////%s' % (db_file, ), convert_unicode=True)
+    # check if db file existst, else create db
+    if p.isfile(db_file) is False:
+        create_db(engine)
     db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))
@@ -50,7 +53,6 @@ if __name__ == '__main__':
     create_db(engine)
 
     store_poetry('to be or not to be')
-    
     db_session.commit()
 
     all_poetry = db_session.query(Poetry).all()
