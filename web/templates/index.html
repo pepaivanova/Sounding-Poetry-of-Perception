@@ -7,7 +7,8 @@
 	<p>Please enter text to hear heaven sounds:</p>
         <form action="/" method="POST">
             <input type="text" name="poetry" size="40" value="Please enter Your text here." autofocus>
-	        <input type="submit" value="Submit">
+	    <input type="submit" value="Submit">
+            <input type="submit" name="sound_off" value="Sound OFF">
         </form>
         {% if result %}
 	    You entered: {{ result }}
