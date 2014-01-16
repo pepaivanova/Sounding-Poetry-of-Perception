@@ -1,4 +1,4 @@
 #/bin/bash
 cd web
 source virtual/bin/activate
-python app.py &
+python app.py
