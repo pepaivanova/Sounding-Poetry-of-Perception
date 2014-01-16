@@ -38,8 +38,13 @@ To run the application:
 
 ```
 source virtual/bin/activate
-python createSoundsDB.py
 python app.py
+```
+
+to start pdextended autmatically and then flask server
+
+```
+../run
 ```
 
 FancyInput
