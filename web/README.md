@@ -42,6 +42,13 @@ python createSoundsDB.py
 python app.py
 ```
 
+FancyInput
+----------
+
+JQuery library for input fields. It should be implemented for better looking website:
+[FancyInput](https://github.com/yairEO/fancyInput)
+
+
 Database
 --------
 
