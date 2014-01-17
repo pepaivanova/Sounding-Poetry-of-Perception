@@ -7,7 +7,8 @@ from flask import request
 import database
 from send2Pd import checkPdStarted
 from send2Pd import startStopPd
-from send2Pd import send2Pd
+# from send2Pd import send2Pd
+from send2Pd import processText
 from send2Pd import dspOn
 from send2Pd import dspOff
 app = Flask(__name__)
@@ -34,7 +35,7 @@ def poetry(name=None):
         # turn on audio
         dspOn()
         # send text to pure data
-        send2Pd(text)
+        processText(text)
         return render_template('index.html', result=text)
         #
     else:
