@@ -32,11 +32,7 @@ def poetry(name=None):
         if text != "Please enter text.":
             database.store_poetry(text)
         # turn on audio
-        try:
-            request.form['sound_off'] == "Sound OFF"
-            dspOff()
-        except:
-            dspOn()
+        dspOn()
         # send text to pure data
         send2Pd(text)
         return render_template('index.html', result=text)
