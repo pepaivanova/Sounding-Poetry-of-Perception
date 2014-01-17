@@ -16,7 +16,7 @@ class Poetry(Base):
     __tablename__ = 'poetry'
     id = Column(Integer, primary_key=True)
     sounded_at = Column(DateTime)
-    poetry = Column(String(50), unique=False)
+    poetry = Column(String(200), unique=False)
 
 
 def store_poetry(poetry):
