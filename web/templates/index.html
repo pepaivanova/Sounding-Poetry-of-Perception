@@ -3,7 +3,7 @@
         <link rel="stylesheet" href="/static/styles.css">
         <link rel="stylesheet" href="/static/fancyInput.css">
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <!--<script src="jquery.min.js"></script>-->
         <script src="/static/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="/static/fancyInput.js"></script>
@@ -15,18 +15,17 @@
 	<p>Please enter text to hear heaven sounds:</p>
     <br />
         <form action="/" method="POST" autocomplete="off">
-            <div id="content">
-                <section class="input">
-                    <input type="text" name="poetry" placeholder="Please enter text." autofocus>
-                </section>
-            </div>
-            <br />
-            <!--div>
-                <input type="submit" name="Submit" value="Submit">
-            </div>
-            <div>
-                <input type="submit" name="sound_off" value="Sound OFF">
-            </div-->
+            <section class='textarea'>
+                <div>
+                     <textarea name="poetry" cols="1" rows="6">enter your poem here ...</textarea>
+                </div>
+            </section>
+            </br>
+            <section>
+		<p class="compose">
+	             <input type="submit" name="Compose" value="Compose">
+		</p>
+            </section>
         </form>
         <div style="margin-top:70px;">
         {% if result %}
