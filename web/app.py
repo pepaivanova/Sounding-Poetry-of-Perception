@@ -5,6 +5,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import database
+from time import gmtime, strftime
 from send2Pd import checkPdStarted
 from send2Pd import startStopPd
 # from send2Pd import send2Pd
@@ -23,6 +24,11 @@ else:
     startStopPd('pdextended -nogui -noadc -open ../pd/startSoundFromPython.pd &')
     print("Pure Data started")
 
+def getCurrentDateTime():
+    # return date and time string
+    dateAndTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    return dateAndTime
+
 
 @app.route('/', methods=['POST', 'GET'])
 def poetry(name=None):
@@ -30,12 +36,17 @@ def poetry(name=None):
     if request.method == 'POST':
     # get text from the form
         text = request.form['poetry']
-        if text != "Please enter text.":
+        if text != "enter your poem here ...":
             database.store_poetry(text)
             # turn on audio
             dspOn()
             # send text to pure data
             processText(text)
+            # get current date and time
+            dt = getCurrentDateTime()
+            place = "Bulgaria, Sofia"
+            txt = text
+            text = dt + " | " + place + " | " + txt 
         return render_template('index.html', result=text)
         #
     else:
