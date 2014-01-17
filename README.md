@@ -72,3 +72,5 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 [Dwayne Richard Hipp](http://en.wikipedia.org/wiki/D._Richard_Hipp) (SQLite)
 
 [Michael Bayer](https://twitter.com/zzzeek) (SQLAlchemy)
+
+[yairEO](https://github.com/yairEO/fancyInput) (fancyInput)
