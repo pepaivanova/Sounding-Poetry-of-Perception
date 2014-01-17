@@ -1,17 +1,40 @@
 <html>
     <head>
+        <link rel="stylesheet" href="/static/styles.css">
+        <link rel="stylesheet" href="/static/fancyInput.css">
+        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+        <!--<script src="jquery.min.js"></script>-->
+        <script src="/static/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/static/fancyInput.js"></script>
         <title>sounding poetry of perception</title>
     </head>
     <body>
+    <br />
 	<h1>Sounding poetry of perception</h1>
 	<p>Please enter text to hear heaven sounds:</p>
-        <form action="/" method="POST">
-            <input type="text" name="poetry" size="40" value="Please enter text." autofocus>
-	        <input type="submit" value="Submit">
-            <input type="submit" name="sound_off" value="Sound OFF">
+    <br />
+        <form action="/" method="POST" autocomplete="off">
+            <div id="content">
+                <section class="input">
+                    <input type="text" name="poetry" placeholder="Please enter text." autofocus>
+                </section>
+            </div>
+            <br />
+            <!--div>
+                <input type="submit" name="Submit" value="Submit">
+            </div>
+            <div>
+                <input type="submit" name="sound_off" value="Sound OFF">
+            </div-->
         </form>
+        <div style="margin-top:70px;">
         {% if result %}
 	    You entered: {{ result }}
         {% endif %}
+        </div>
+        <script>
+            $('div :input').fancyInput();
+        </script>
     </body>
 </html>
