@@ -32,10 +32,10 @@ def poetry(name=None):
         text = request.form['poetry']
         if text != "Please enter text.":
             database.store_poetry(text)
-        # turn on audio
-        dspOn()
-        # send text to pure data
-        processText(text)
+            # turn on audio
+            dspOn()
+            # send text to pure data
+            processText(text)
         return render_template('index.html', result=text)
         #
     else:
