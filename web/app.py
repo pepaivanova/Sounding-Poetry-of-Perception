@@ -5,7 +5,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import database
-from time import gmtime, strftime
+from time import gmtime, localtime, strftime
 from send2Pd import checkPdStarted
 from send2Pd import startStopPd
 # from send2Pd import send2Pd
@@ -26,7 +26,7 @@ else:
 
 def getCurrentDateTime():
     # return date and time string
-    dateAndTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    dateAndTime = strftime("%Y-%m-%d %H:%M:%S", localtime())
     return dateAndTime
 
 
