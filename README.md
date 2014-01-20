@@ -67,6 +67,8 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 
 [Guido van Rossum](http://en.wikipedia.org/wiki/Guido_van_Rossum) (Python)
 
+[Chris McCormick](http://mccormick.cx/projects/PyPd/) (PyPd)
+
 [Armin Ronacher](https://twitter.com/mitsuhiko) (Flask)
 
 [Dwayne Richard Hipp](http://en.wikipedia.org/wiki/D._Richard_Hipp) (SQLite)
