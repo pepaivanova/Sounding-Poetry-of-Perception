@@ -5,6 +5,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import database
+from Pd import Pd
 from time import gmtime, localtime, strftime
 from send2Pd import checkPdStarted
 from send2Pd import startStopPd
@@ -17,12 +18,16 @@ app = Flask(__name__)
 db_file = p.abspath(p.join(os.getcwd(), 'sounds.db'))
 database.connect_db(db_file)
 
-# check if pure data is running and if not start it
-if checkPdStarted('pdextended'):
-    print("Pure Data is running")
-else:
-    startStopPd('pdextended -nogui -noadc -open ../pd/startSoundFromPython.pd &')
-    print("Pure Data started")
+#start Pure Data
+def startPd():
+    # Here should be placed the generation of the commands to PD
+    '''
+    pd = Pd(nogui=False)
+    print("PD started")
+    pd.Send(["Hello", "World"])
+    '''
+    pass
+
 
 def getCurrentDateTime():
     # return date and time string
@@ -41,12 +46,13 @@ def poetry(name=None):
             # turn on audio
             dspOn()
             # send text to pure data
+            startPd()
             processText(text)
             # get current date and time
             dt = getCurrentDateTime()
             place = "Bulgaria, Sofia"
             txt = text
-            text = dt + " | " + place + " | " + txt 
+            text = dt + " | " + place + " | " + txt
         return render_template('index.html', result=text)
         #
     else:
