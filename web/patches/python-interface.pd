@@ -1,4 +1,4 @@
-#N canvas 441 249 529 501 10;
+#N canvas 439 254 529 501 10;
 #X obj 268 187 loadbang;
 #X obj 268 231 netsend;
 #X obj 18 416 spigot 0;
@@ -14,8 +14,8 @@
 #X obj 15 152 outlet;
 #X obj 18 393 inlet;
 #X obj 267 344 outlet;
-#X obj 15 11 netreceive 3010;
-#X msg 268 209 connect 127.0.0.1 3000;
+#X obj 15 11 netreceive 3000;
+#X msg 268 209 connect 127.0.0.1 3010;
 #X connect 0 0 16 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;
