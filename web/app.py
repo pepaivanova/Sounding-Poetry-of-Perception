@@ -7,7 +7,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import database
-from Pd import Pd
+from Pd import pd
 from time import gmtime, localtime, strftime
 from send2Pd import checkPdStarted
 from send2Pd import startStopPd
@@ -21,35 +21,7 @@ db_file = p.abspath(p.join(os.getcwd(), 'sounds.db'))
 database.connect_db(db_file)
 
 #start Pure Data
-def startPd():
-    # Here should be placed the generation of the commands to PD
-    '''
-    pd = Pd(nogui=False)
-    print("PD started")
-    pd.Send(["Hello", "World"])
-    '''
-    print("Starting PD")
-    start = time()
-    # launching pd
-    pd = Pd(nogui=False)
-    pd.Send(["test message", 1, 2, 3])
-
-    def Pd_hello(self, message):
-        print "Pd called Pd_hello(%s)" % message
-
-    pd.Pd_hello = Pd_hello
-
-    sentexit = False
-    # running a bunch of stuff for up to 20 seconds
-    while time() - start < 60 and pd.Alive():
-        if time() - start > 20 and not sentexit:
-            pd.Send(["exit"])
-            sentexit = True
-        pd.Update()
-
-    if pd.Alive():
-        pd.Exit()
-
+# Here should be implemented the communication between PD and Python
 
 def getCurrentDateTime():
     # return date and time string
@@ -68,7 +40,8 @@ def poetry(name=None):
             # turn on audio
             dspOn()
             # send text to pure data
-            startPd()
+            # startPd() - function to start PD and correctly process info and
+            # text should be implemented
             processText(text)
             # get current date and time
             dt = getCurrentDateTime()
