@@ -7,6 +7,14 @@ pd = Pd(port=3010, nogui=False, open="sounding.pd", cmd=None,
         path=["patches"], extra=None, stderr=False)
 pd.Send(["Hello world"])
 pd.Send(["Hello Rado"])
+pd.Send(["dspOn"])
+pd.Send(["dspOff"])
+pd.Send(["dspOn"])
+pd.Send(["load read sounds/moga.wav array1"])
+pd.Send(["play1"])
+pd.Send(["load read sounds/motorr.wav array2"])
+pd.Send(["play2"])
+
 
 while pd.Alive():
     pd.Update()
