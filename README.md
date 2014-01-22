@@ -52,7 +52,7 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 
 ## Dependencies
 
-* Python > 2.7
+* Python > 2.7 < 3.0
 * [Pure Data (pd-extended)](http://puredata.info/downloads/pd-extended)
 * [Flask](http://flask.pocoo.org)
 * [SQLite3](http://www.sqlite.org)
