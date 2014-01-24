@@ -7,14 +7,10 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import database
-from Pd import pd
+from pd import Pd
+from sounding import startPd
 from time import gmtime, localtime, strftime
-from send2Pd import checkPdStarted
-from send2Pd import startStopPd
 # from send2Pd import send2Pd
-from send2Pd import processText
-from send2Pd import dspOn
-from send2Pd import dspOff
 app = Flask(__name__)
 
 db_file = p.abspath(p.join(os.getcwd(), 'sounds.db'))
@@ -37,12 +33,11 @@ def poetry(name=None):
         text = request.form['poetry']
         if text != "enter your poem here ...":
             database.store_poetry(text)
-            # turn on audio
-            dspOn()
             # send text to pure data
             # startPd() - function to start PD and correctly process info and
             # text should be implemented
-            processText(text)
+            #processText(text)
+            startPd()
             # get current date and time
             dt = getCurrentDateTime()
             place = "Bulgaria, Sofia"
@@ -60,7 +55,7 @@ def poetry(name=None):
 def config():
     if request.method == 'POST':
         if request.form['sound_off'] == "Sound OFF":
-            dspOff()
+            # dspOff()
             print("Sound OFF")
     # config page, where sounds could be started and stoped
     return render_template('config.html')
