@@ -48,9 +48,8 @@ class Printer():
 def main():
     printer = Printer()
     printer.connect()
-    printer.print('kiss my ass')
+    printer.print('Sounding Poetry of Perception')
     printer.disconnect()
-
 
 
 if __name__ == "__main__":
