@@ -4,9 +4,12 @@
     </head>
     <body>
     <h2>Configuration page</h2>
-	<p></p>
-        <form action="/config" method="POST">
+	<p>File uploaded to the server:</p>
+        {% if result %}
+	    Uploaded: {{ result }}
+        {% endif %}
+        <!--form action="/config" method="POST">
             <input type="submit" name="sound_off" value="Sound OFF">
-        </form>
+        </form-->
     </body>
 </html>
