@@ -5,16 +5,28 @@ from os import path, getcwd
 
 from flask import Flask
 from flask import render_template
-from flask import request
+from flask import request, redirect, url_for
+from werkzeug import secure_filename
+
 import database
 from pd import Pd
 from sounding import startPd
 from time import gmtime, localtime, strftime
-# from send2Pd import send2Pd
+
 app = Flask(__name__)
 
 db_file = p.abspath(p.join(os.getcwd(), 'sounds.db'))
 database.connect_db(db_file)
+
+# flask-uploads extension
+UPLOAD_FOLDER = 'patches/sounds'
+ALLOWED_EXTENSIONS = set(['wav', 'mp3'])
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+def allowed_file(filename):
+    return '.' in filename and \
+            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 #start Pure Data
 # Here should be implemented the communication between PD and Python
@@ -51,13 +63,40 @@ def poetry(name=None):
     return render_template('index.html', name=name)
 
 
-@app.route('/config', methods=['POST', 'GET'])
-def config():
+@app.route('/upload', methods=['POST', 'GET'])
+def upload_file():
     if request.method == 'POST':
-        if request.form['sound_off'] == "Sound OFF":
-            # dspOff()
-            print("Sound OFF")
-    # config page, where sounds could be started and stoped
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #return redirect(url_for('uploaded_file',
+            #                        filename=filename))
+            #return render_template('config.html', result=filename)
+            return '''
+            <!doctype html>
+            <title>Upload new File</title>
+            <h1>Upload new File</h1>
+            <form action="" method=post enctype=multipart/form-data>
+            <p><input type=file name=file>
+                <input type=submit value=Upload>
+            </form>
+            <p>File uploaded</p>
+            '''
+
+    return '''
+    <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+    '''
+
+@app.route('/config')
+def config():
+    # open About page, where should be described the project
     return render_template('config.html')
 
 
