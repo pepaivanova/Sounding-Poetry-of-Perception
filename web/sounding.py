@@ -4,7 +4,7 @@ from pd import Pd
 def startPd():
     #start = time()
     # start pd
-    pd = Pd(port=3010, nogui=False, open="sounding.pd", cmd=None,
+    pd = Pd(port=3010, nogui=True, open="sounding.pd", cmd=None,
             path=["patches"], extra=None, stderr=False)
     pd.Send(["Hello world"])
     pd.Send(["Hello Rado"])
@@ -15,7 +15,6 @@ def startPd():
 
     while pd.Alive():
         pd.Update()
-        #pd.Send(["load2 read sounds/motorr.wav array2"])
 
     if pd.Alive():
         pd.Exit()
