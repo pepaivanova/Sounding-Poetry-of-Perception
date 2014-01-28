@@ -21,6 +21,8 @@ if hasattr(select, 'poll'):
 else:
     from asyncore import poll
 
+from processData import processData
+
 cr = re.compile("[\r\n]+")
 
 # monkey patch older versions to support maps in asynchat. Yuck.
@@ -222,8 +224,12 @@ class Pd:
 	def PdMessage(self, data):
 		"""
 		Override this method to receive messages from Pd.
+ 		print "untrapped message:", data
 		"""
-		print "untrapped message:", data
+ 		print "received: ", data
+  		ans = processData(data)
+  		if "load2" in ans:
+  		 	 self._pdSend.Send([ans])
 
 	def Connect(self, addr):
 		self._pdSend.Connect((addr[0], self.port))
