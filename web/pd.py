@@ -228,7 +228,7 @@ class Pd:
 		"""
  		print "received: ", data
   		ans = processData(data)
-  		if "load2" in ans:
+  		if "load2" or "load1" in ans:
   		 	 self._pdSend.Send([ans])
 
 	def Connect(self, addr):
