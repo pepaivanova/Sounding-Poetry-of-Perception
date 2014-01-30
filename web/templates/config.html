@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Sounding poetry of perception</title>
+    </head>
+    <body>
+    <h2>Configuration page</h2>
+	<p>File uploaded to the server:</p>
+        {% if result %}
+	    Uploaded: {{ result }}
+        {% endif %}
+        <!--form action="/config" method="POST">
+            <input type="submit" name="sound_off" value="Sound OFF">
+        </form-->
+    </body>
+</html>

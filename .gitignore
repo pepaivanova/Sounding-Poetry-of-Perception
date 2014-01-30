@@ -1,0 +1,9 @@
+*.py[o|c]
+*.swp
+*.py~
+*.db
+sounds.db
+/web/virtual/
+/web/build/
+.ropeproject
+/docs
