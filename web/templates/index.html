@@ -33,12 +33,10 @@
         {% endif %}
         </div>
         <script>
-            function sendText(){
-            var x=document.forms["poetry"]["Compose"].value;
-            var websocket=new WebSocket('ws://127.0.0.1:9998');
-            websocket.onopen = function(event) {
-                websocket.send('start');
-            };
+        var websocket=new WebSocket('ws://127.0.0.1:9998');
+        websocket.onmessage=function(event){
+            console.log(event.data);
+            websocket.send(event.data);};
         </script>
         <script>
             $('div :input').fancyInput();
