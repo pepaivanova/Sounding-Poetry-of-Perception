@@ -1,5 +1,6 @@
 <html><body><script>
 var websocket=new WebSocket('ws://127.0.0.1:9998');
-websocket.onmessage=function(event){websocket.send(event.data+" Rado !!!");
-    websocket.send("Hell");};
+websocket.onmessage=function(event){
+    console.log(event.data);
+    websocket.send(event.data);};
 </script></body></html>
