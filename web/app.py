@@ -10,6 +10,7 @@ from werkzeug import secure_filename
 
 import database
 from time import gmtime, localtime, strftime
+from sounding import processPoetry
 
 app = Flask(__name__)
 
@@ -43,9 +44,7 @@ def poetry(name=None):
         text = request.form['poetry']
         if text != "enter your poem here ...":
             database.store_poetry(text)
-            # send text to pure data
-            # now the communication should be through websocket
-            #
+            processPoetry(text)
             # get current date and time
             dt = getCurrentDateTime()
             place = "Bulgaria, Sofia"
