@@ -18,7 +18,7 @@ db_file = p.abspath(p.join(os.getcwd(), 'sounds.db'))
 database.connect_db(db_file)
 
 # flask-uploads extension
-UPLOAD_FOLDER = 'patches/sounds'
+UPLOAD_FOLDER = 'sounds'
 ALLOWED_EXTENSIONS = set(['wav', 'mp3'])
 global SET_LOCATION
 SET_LOCATION = ''
@@ -78,6 +78,12 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            # run normalize-audio on .wav file
+            msg = 'normalize-audio sounds/' + file.filename
+            try:
+                os.system(msg)
+            except:
+                print("'normalizer-audio' not found")
             #return redirect(url_for('uploaded_file',
             #                        filename=filename))
             #return render_template('config.html', result=filename)
