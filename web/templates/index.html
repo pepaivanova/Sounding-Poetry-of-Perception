@@ -9,10 +9,10 @@
         <script type="text/javascript" src="/static/fancyInput.js"></script>
         <title>Sounding Poetry of Perception</title>
     </head>
-    <body>
-    <br />
-	<h1>Sounding poetry of perception</h1>
-	<p>Please enter text to hear heaven sounds:</p>
+    <body style="background-image:url(static/background_Ljudmila.jpg); background-size: cover; background-repeat: no-repeat;">
+    <br /><br />
+	<h1 class="title">Sounding poetry of perception</h1><br />
+	<p class="subtitle">Please enter text to hear heaven sounds:</p>
     <br />
         <form action="/" method="POST" autocomplete="off" onsubmit="sendText()">
             <section class='textarea'>
@@ -28,9 +28,11 @@
             </section>
         </form>
         <div style="margin-top:70px;">
+        <p class="result">
         {% if result %}
 	    You entered: {{ result }}
         {% endif %}
+        </p>
         </div>
         <script>
         var websocket=new WebSocket('ws://127.0.0.1:9998');
