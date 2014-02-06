@@ -40,6 +40,8 @@ into words.
 * [Flask](http://flask.pocoo.org)
 * [SQLite3](http://www.sqlite.org)
 * [SQLAlchemy](http://www.sqlalchemy.org)
+* [java > 1.7](http://openjdk.java.net/install/)
+* [normalize](http://normalize.nongnu.org)
 * [Websocket-server-patch-extended](http://puredata.hurleur.com/sujet-10062-websocket-server-patch-extended-demo)
 
 ## Special thanks to:
@@ -65,4 +67,3 @@ into words.
 [Nicolas Lhommet](http://puredata.hurleur.com/profil-47995-nicolas-lhommet)
 (Websocket)
 
-[normalize](http://normalize.nongnu.org)
