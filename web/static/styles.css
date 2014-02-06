@@ -46,3 +46,6 @@ header{ position:absolute; z-index:999; top:0; left:0; width:100%; padding:10px 
 .fancyInput{ max-width:80%; min-width:50%; font-size:10px; color:#FFF; vertical-align:middle; line-height:1.3; overflow:hidden; text-align:left; padding:8px 20px; background:rgba(255,0,0,.1); border-radius:6px; }
 .fancyInput.textarea{ line-height:normal; font-size:20px; max-width:50%; min-height:160px; max-height:40%; }
 .compose{ text-align: right; margin-right:25%;}
+h1.title{ color: #D8DBDD; }
+p.subtitle{ color: #D8DBDD; }
+p.result{ color: #D8DBDD;}
