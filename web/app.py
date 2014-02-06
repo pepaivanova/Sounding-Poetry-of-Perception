@@ -57,7 +57,7 @@ def poetry(name=None):
             dt = getCurrentDateTime()
             place = SET_LOCATION
             txt = text
-            text = dt + " | " + place + " | " + txt
+            text = dt + " / " + place + " / " + txt
             # print text message on thermal printer
             if prn is not None:
                 prn.printText(text)
