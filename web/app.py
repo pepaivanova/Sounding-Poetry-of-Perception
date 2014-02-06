@@ -20,6 +20,8 @@ database.connect_db(db_file)
 # flask-uploads extension
 UPLOAD_FOLDER = 'patches/sounds'
 ALLOWED_EXTENSIONS = set(['wav', 'mp3'])
+global SET_LOCATION
+SET_LOCATION = ''
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -39,6 +41,12 @@ def getCurrentDateTime():
 @app.route('/', methods=['POST', 'GET'])
 def poetry(name=None):
     error = None
+    try:
+        prn = Printer()
+        prn.connect()
+    except:
+        prn = None
+        print('Printer not found.')
     if request.method == 'POST':
     # get text from the form
         text = request.form['poetry']
@@ -47,9 +55,14 @@ def poetry(name=None):
             processPoetry(text)
             # get current date and time
             dt = getCurrentDateTime()
-            place = "Bulgaria, Sofia"
+            place = SET_LOCATION
             txt = text
             text = dt + " | " + place + " | " + txt
+            # print text message on thermal printer
+            if prn is not None:
+                prn.printText(text)
+                # disconnect printer
+                prn.disconnect()
         return render_template('index.html', result=text)
         #
     else:
@@ -89,10 +102,23 @@ def upload_file():
     </form>
     '''
 
-@app.route('/config')
-def config():
-    # open About page, where should be described the project
-    return render_template('config.html')
+@app.route('/config', methods=['POST', 'GET'])
+def config(name='Example: Sofia, Bulgaria'):
+    # configuration of the settings
+    error = None
+    if request.method == 'POST':
+    # get text from the form
+        location = request.form['location']
+        if location != "Set location here.":
+            SET_LOCATION = location
+            #print(SET_LOCATION)
+            new_location = "Location set to: " + location
+        return render_template('config.html', result=new_location)
+        #
+    else:
+        error = 'Error !'
+    #
+    return render_template('config.html', result=name)
 
 
 @app.route('/about')
