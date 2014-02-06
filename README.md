@@ -46,6 +46,10 @@ into words.
 
 [Kiril Zyapkov](https://github.com/kzyapkov)
 
+[Ruslan Velkov](https://github.com/zubenelacribi)
+
+[Mircho Mirev](https://dontknow.com)
+
 [Miller Puckette](http://en.wikipedia.org/wiki/Miller_Puckette) (Pure Data)
 
 [Guido van Rossum](http://en.wikipedia.org/wiki/Guido_van_Rossum) (Python)
@@ -61,3 +65,4 @@ into words.
 [Nicolas Lhommet](http://puredata.hurleur.com/profil-47995-nicolas-lhommet)
 (Websocket)
 
+[normalize](http://normalize.nongnu.org)
