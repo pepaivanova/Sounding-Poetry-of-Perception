@@ -40,7 +40,7 @@ class Printer():
         else:
             return False
 
-    def print(self, message):
+    def printText(self, message):
         if self.status is 'connected':
             msg = message + self.term
             self.printer.write(msg.encode(encoding=self.cp, errors='strict'))
@@ -48,7 +48,7 @@ class Printer():
 def main():
     printer = Printer()
     printer.connect()
-    printer.print('Sounding Poetry of Perception')
+    printer.printText('Sounding Poetry of Perception')
     printer.disconnect()
 
 
