@@ -9,11 +9,14 @@ def processPoetry(text):
     background = poetry.split()
     # background set to the second word in text
     if len(background) == 1:
-        msg = 'java -cp bin AudioMix "' + background[0] + '" 0.1 "' + poetry + '"'
+        msg = 'java -cp player/bin AudioMix "' + background[0] + '" 0.1 "' + poetry + '"'
+        #print(msg)
     elif len(background) > 1:
-        msg = 'java -cp bin AudioMix "' + background[1] + '" 0.1 "' + poetry + '"'
+        msg = 'java -cp player/bin AudioMix "' + background[1] + '" 0.1 "' + poetry + '"'
+        #print(msg)
     else:
-        msg = 'java -cp bin AudioMix "motorr" 0.1 "motorr"'
+        msg = 'java -cp player/bin AudioMix "motorr" 0.1 "motorr"'
+        #print(msg)
     os.system(msg)
 
 def checkSymbol(symbol, word):
