@@ -4,12 +4,19 @@
     </head>
     <body>
     <h2>Configuration page</h2>
-	<p>File uploaded to the server:</p>
+        <form action="/config" method="POST" autocomplete="off" onsubmit="/config">
+            <input type="text" name="location" value="Set location here.">
+		</form>
+
+        <div>
         {% if result %}
-	    Uploaded: {{ result }}
+	    {{ result }}
         {% endif %}
-        <!--form action="/config" method="POST">
-            <input type="submit" name="sound_off" value="Sound OFF">
-        </form-->
+        </div>
+        <br /><br />
+        <form autocomplete="off">
+            <input type="text" name="printerPort" value="/dev/ttyUSB0">
+		</form><p>Enter printer port here.</p>
+
     </body>
 </html>
