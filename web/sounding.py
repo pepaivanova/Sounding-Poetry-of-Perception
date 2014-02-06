@@ -5,22 +5,13 @@ def processPoetry(text):
     # process text from the input
     fileslist = getFiles('patches/sounds')
     temp = []
-    poetry = text.split()
-    for i in range(len(poetry)):
-        if '.' in poetry[i]:
-            # find the position of dot symbol
-            pos = poetry[i].index('.')
-            print(pos)
-            # replace '.' symbol with 'dot'
-            poetry[i] = poetry[i].strip('.') + ' dot'
-            print(type(poetry))
-    for i in range(len(poetry)):
-        temp[i] = poetry[i] + ' '
-        text = ''.join(temp)
-    print(text)
-    #os.system(('java -cp patches/bin AudioMix "%s" 0.1 "%s"', poetry[2], poetry))
-    print(poetry)
-    #pass
+    poetry = text.strip('.!-')
+    background = poetry.split()
+    #print(poetry)
+    #print(type(poetry))
+    # background set to the second word in text
+    msg = 'java -cp bin AudioMix "' + background[1] + '" 0.1 "' + poetry + '"'
+    os.system(msg)
 
 def checkSymbol(symbol, word):
     #
@@ -37,7 +28,7 @@ def getFiles(folder):
             if filename.endswith(('.mp3', '.wav')):
                 musicFiles.append(filename)
     # return tuple
-    return tuple(musicFiles)
+    return musicFiles
 
 def checkWord(word, filelist):
     '''
@@ -53,7 +44,7 @@ def checkWord(word, filelist):
 
 
 def main():
-    processPoetry('fairytale with 3dprinter.')
+    processPoetry('Motorr thegridge moga motorr moga nemoga.')
 
 if __name__ == "__main__":
     main()
