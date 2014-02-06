@@ -7,10 +7,13 @@ def processPoetry(text):
     temp = []
     poetry = text.strip('.!-')
     background = poetry.split()
-    #print(poetry)
-    #print(type(poetry))
     # background set to the second word in text
-    msg = 'java -cp bin AudioMix "' + background[1] + '" 0.1 "' + poetry + '"'
+    if len(background) == 1:
+        msg = 'java -cp bin AudioMix "' + background[0] + '" 0.1 "' + poetry + '"'
+    elif len(background) > 1:
+        msg = 'java -cp bin AudioMix "' + background[1] + '" 0.1 "' + poetry + '"'
+    else:
+        msg = 'java -cp bin AudioMix "motorr" 0.1 "motorr"'
     os.system(msg)
 
 def checkSymbol(symbol, word):
