@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Sounding poetry of perception</title>
+    </head>
+    <body>
+    <h2>Configuration page</h2>
+        <form action="/config" method="POST" autocomplete="off" onsubmit="/config">
+            <input type="text" name="location" value="Set location here.">
+		</form>
+
+        <div>
+        {% if result %}
+	    {{ result }}
+        {% endif %}
+        </div>
+        <br /><br />
+        <form autocomplete="off">
+            <input type="text" name="printerPort" value="/dev/ttyUSB0">
+		</form><p>Enter printer port here.</p>
+
+    </body>
+</html>
