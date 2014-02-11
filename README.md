@@ -46,6 +46,10 @@ into words.
 * [Python thermal printer library](https://github.com/luopio/py-thermal-printer)
 * [Field recordings 7690 10-second audio clips](http://academictorrents.com/details/d247b92fa7b606e0914367c0839365499dd20121)
 
+## Temporary links
+
+* [Hacking a thermal till printer to work with the Raspberry Pi](http://smittytone.wordpress.com/2013/09/23/hacking-a-thermal-till-printer-to-work-with-the-raspberry-pi/) 
+
 ## Special thanks to:
 
 [Kiril Zyapkov](https://github.com/kzyapkov)
