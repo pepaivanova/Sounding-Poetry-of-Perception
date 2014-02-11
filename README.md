@@ -43,6 +43,8 @@ into words.
 * [java > 1.7](http://openjdk.java.net/install/)
 * [normalize](http://normalize.nongnu.org)
 * [Websocket-server-patch-extended](http://puredata.hurleur.com/sujet-10062-websocket-server-patch-extended-demo)
+* [Python thermal printer library](https://github.com/luopio/py-thermal-printer)
+* [Field recordings 7690 10-second audio clips](http://academictorrents.com/details/d247b92fa7b606e0914367c0839365499dd20121)
 
 ## Special thanks to:
 
@@ -67,3 +69,4 @@ into words.
 [Nicolas Lhommet](http://puredata.hurleur.com/profil-47995-nicolas-lhommet)
 (Websocket)
 
+[Lauri Kainulainen](http://lauri.sokkelo.net)
