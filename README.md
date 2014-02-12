@@ -33,6 +33,15 @@ into words.
 
 (Just started, Development, Testing, Production)
 
+## Starting
+
+In console type:
+
+```
+cd Sounding-Poetry-of-Perception
+./run
+```
+
 ## Dependencies
 
 * Python > 2.7
