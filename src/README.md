@@ -1,7 +1,6 @@
 ## Requirements
 
  * node.js
- * nodemon
  * express
 
 ## Install
@@ -12,7 +11,6 @@ Install latest version of node.js. Instructions for different OS:
 
 ```
 sudo npm install express -g
-sudo npm install nodemon -g
 ```
 
 'package.json' contains information about the application.
@@ -29,16 +27,13 @@ Install dependencies:
 cd sounding && npm install
 ```
 
+## Usage
+
 run the app:
 
 ```
-DEBUG=sounding node app
+Sounding-Poetry-of-Perception/src/sounding/$ DEBUG=sounding node app
+Sounding-Poetry-of-Perception/src/sounding/$ npm start
 ```
 
-## Usage
-
-```
-Sounding-Poetry-of-Perception/src/sounding/npm start
-```
-
-Using [LightTable}(http://www.lighttable.com) edit source code and test in browser.
+Using [LightTable](http://www.lighttable.com) edit source code and test in browser.
