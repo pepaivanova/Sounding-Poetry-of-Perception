@@ -7,3 +7,4 @@ sounds.db
 /web/build/
 .ropeproject
 /docs
+node_modules
