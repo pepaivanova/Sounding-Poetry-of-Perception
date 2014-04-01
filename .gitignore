@@ -2,6 +2,7 @@
 *.swp
 *.py~
 *.db
+*.*~
 sounds.db
 /web/virtual/
 /web/build/
