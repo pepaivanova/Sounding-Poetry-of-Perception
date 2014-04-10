@@ -34,6 +34,8 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
  * JQuery
  * node.js
  * serialport
+ * [vegas](http://vegas.jaysalvat.com)
+ * [buzz](http://buzz.jaysalvat.com)
 
 
 ## [License](LICENSE) - The Artistic License 2.0
