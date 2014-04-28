@@ -1,6 +1,6 @@
 var mySound = new buzz.sound( "/sounds/rain-01", {
     formats: [ "ogg", "mp3", "aac" ],
-    preload: true,
+    preload: false,
     autoplay: true,
     loop: false
 });
