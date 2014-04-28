@@ -1,6 +1,6 @@
-var mySound = new buzz.sound( "sounds/rain-01", {
-    formats: [ "mp3", "ogg", "aac" ],
-    preload: false,
+var mySound = new buzz.sound( "http://192.168.1.1:85/other/freeSounds/01/101389.wav", {
+    // formats: [ "mp3", "ogg", "aac" ],
+    preload: true,
     autoplay: true,
     loop: false
 });
