@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#
+# This script updates gh-pages of Sounding-Poetry-of-Perception repository
+# USE IT CAREFULLY
+#
+
+mkdir ../tmp
+# git clone -b gh-pages git@github.com:pepaivanova/Sounding-Poetry-of-Perception.git ../tmp
+# cp -rf sounding/public/* ../tmp
+# cd ../tmp
+# git add .
+# git commit -m "gh-pages updated with latest changes"
+# git push
