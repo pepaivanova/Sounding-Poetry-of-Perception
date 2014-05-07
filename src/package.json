@@ -1,9 +1,0 @@
-{
-  "name": "sounding-poetry",
-  "description": "The project explores the relationship between our perception and the individual experience of constructing reality.",
-  "version": "0.0.1",
-  "private": true,
-  "dependencies": {
-    "express": "3.x"
-  }
-}
