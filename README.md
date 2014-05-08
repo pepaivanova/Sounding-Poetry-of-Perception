@@ -31,6 +31,7 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 ## Testing libraries
  * [peaks.js](https://github.com/bbcrd/peaks.js)
  * [audiowaveform](https://github.com/bbcrd/audiowaveform)
+ * [jplayer](http://www.jplayer.org)
 
 ## [License](LICENSE) - The Artistic License 2.0
 
