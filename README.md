@@ -1,15 +1,6 @@
 Sounding poetry of perception
 =============================
 
-## Description
-
-We will see.
-
-
-## Hardware
-
- * This project uses old laptop Asus AspireOne + Thermal Printer COM-10438
-
 
 ## Motivation
 
@@ -37,6 +28,9 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
  * [vegas](http://vegas.jaysalvat.com)
  * [buzz](http://buzz.jaysalvat.com)
 
+## Testing libraries
+ * [peaks.js](https://github.com/bbcrd/peaks.js)
+ * [audiowaveform](https://github.com/bbcrd/audiowaveform)
 
 ## [License](LICENSE) - The Artistic License 2.0
 
@@ -45,4 +39,3 @@ In Sounding Poetry, textual descriptions become a score for sound compositions, 
 
 [yairEO](https://github.com/yairEO/fancyInput) (fancyInput)
 
-[Michael Bayer](https://twitter.com/zzzeek) (SQLAlchemy)
