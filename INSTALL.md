@@ -36,4 +36,12 @@ Sounding-Poetry-of-Perception/src/sounding/$ DEBUG=sounding node app
 Sounding-Poetry-of-Perception/src/sounding/$ npm start
 ```
 
+## CouchDB
+
+Follow the instructions on
+[CouchDB](http://docs.couchdb.org/en/latest/install/index.html) website to
+install database.
+
+Check if CouchDB is installed on [localhost:5984/_utils](localhost:5984/_utils)
+
 Using [LightTable](http://www.lighttable.com) edit source code and test in browser.
