@@ -36,6 +36,12 @@ Sounding-Poetry-of-Perception/src/sounding/$ DEBUG=sounding node app
 Sounding-Poetry-of-Perception/src/sounding/$ npm start
 ```
 
+type in browser:
+
+```
+localhost:3000/test.html
+```
+
 ## CouchDB
 
 Follow the instructions on
