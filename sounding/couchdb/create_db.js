@@ -50,6 +50,42 @@ url = 'http://home.rdrlab.com:85/other/freeSounds/01/';
 // http://scotch.io/tutorials/javascript/scraping-the-web-with-node-js
 request(url, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-        console.log(body);
+        // use regular expression to check if .json
+        var testJSON = /.json/;
+        // split body string into array from the lines
+        body2 = body.split("\r\n");
+        // remove first 4 rows - the header of the page
+        body2.splice(0,4);
+        // remove last 3 elements from the array
+        body2.pop();
+        body2.pop();
+        body2.pop();
+        //
+        // find number of all elements in the array
+        //
+        console.log("lenght of body2 (wav+json): " + body2.length);
+        //
+        // remove all .wav files from the array
+        for (var i in body2) {
+           // check if file ends with .json
+           var test = testJSON.test(body2[i]);
+           if (test) {
+               // console.log(body2[i]);
+               // console.log("test: " + test);
+           }
+           else {
+               body2.splice(i,1);
+               // console.log("test: " + test);
+           }
+        }
+        // print type of body2
+        console.log("type of body2: " + typeof body2);
+        // check if body 2 is array
+        console.log("is body2 array?: " + Array.isArray(body2));
+        // print length of the array
+        console.log("length of body2 (json): " + body2.length);
+        // print all .json files
+        console.log(body2);
+
     }
 });
