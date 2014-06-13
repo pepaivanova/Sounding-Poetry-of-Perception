@@ -1,0 +1,7 @@
+[submodule "buzz"]
+    path = javascripts/buzz
+    url = https://github.com/jaysalvat/buzz.git
+
+[submodule "vegas"]
+    path = javascripts/vegas
+    url = https://github.com/jaysalvat/vegas.git
