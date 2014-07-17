@@ -1,0 +1,6 @@
+[submodule "sounding/public/javascripts/vegas"]
+	path = sounding/public/javascripts/vegas
+	url = https://github.com/jaysalvat/vegas.git
+[submodule "sounding/public/javascripts/buzz"]
+	path = sounding/public/javascripts/buzz
+	url = https://github.com/jaysalvat/buzz.git
