@@ -20,6 +20,7 @@ cd sounding && npm install
 'package.json' contains information about the application.
 
 ## Install 'vegas' and 'buzz' java script libraries
+git submodule update --init --recursive
 
 ```
 cd sounding/public/javascripts
