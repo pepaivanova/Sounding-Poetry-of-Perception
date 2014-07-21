@@ -1,4 +1,16 @@
+/*
+ *  Authors: Radoslav, Mircho
+ *  Purpose: Create initial DB for the application
+ *
+ *
+ */
+
 var request = require('request');
+// Mircho addon for parsing .json files
+var DOMParser = require( 'xmldom' ).DOMParser;
+var config = {
+	path : 'http://home.rdrlab.com:85/other/freeSounds/01/'
+};
 
 var agentkeepalive = require('agentkeepalive');
 var myagent = new agentkeepalive({
@@ -89,3 +101,44 @@ request(url, function(error, response, body) {
 
     }
 });
+
+// Mircho's addon
+request.get( config.path,
+		function( error, response, body )
+		{
+			if( !error )
+			{
+				//here we have the body of the reponse
+				var doc = new DOMParser().parseFromString( body, 'text/html' );
+				var links = doc.documentElement.getElementsByTagName( 'a' );
+				var href, name;
+				//now we have all the links, we can go over them
+				for( var i = 0, len = links.length; i < len; i++ )
+				{
+					href = links[ i ].getAttribute( 'href' );
+					if( href.indexOf( '.json' ) !== -1 )
+					{
+						name = href.replace( '.json', '' );
+						console.log( name, href );
+						continue;
+						request.get( config.path + href,
+								function( error, response, body )
+								{
+									if( !error )
+									{
+										var json = JSON.parse( body );
+										processFileWithTags( name, href, json.tags );
+									}
+								}
+						);
+					}
+				}
+			}
+		}
+);
+
+function processFileWithTags( name, href, tags )
+{
+    // here should be placed the logic for the update of the DB
+	console.log( name, href );
+}
