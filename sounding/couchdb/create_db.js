@@ -50,9 +50,9 @@ nano.db.destroy('sounding', function() {
                   console.log('[sound1] ', err.message);
                   return;
                }
-               console.log('you have inserted sound1');
-               console.log(body);
-               console.log(header);
+               //console.log('you have inserted sound1');
+               //console.log(body);
+               //console.log(header);
             });
         });
     });
@@ -75,7 +75,7 @@ request(url, function(error, response, body) {
         //
         // find number of all elements in the array
         //
-        console.log("lenght of body2 (wav+json): " + body2.length);
+        //console.log("lenght of body2 (wav+json): " + body2.length);
         //
         // remove all .wav files from the array
         for (var i in body2) {
@@ -91,13 +91,13 @@ request(url, function(error, response, body) {
            }
         }
         // print type of body2
-        console.log("type of body2: " + typeof body2);
+        //console.log("type of body2: " + typeof body2);
         // check if body 2 is array
-        console.log("is body2 array?: " + Array.isArray(body2));
+        //console.log("is body2 array?: " + Array.isArray(body2));
         // print length of the array
-        console.log("length of body2 (json): " + body2.length);
+        //console.log("length of body2 (json): " + body2.length);
         // print all .json files
-        console.log(body2);
+        //console.log(body2);
 
     }
 });
@@ -119,8 +119,8 @@ request.get( config.path,
 					if( href.indexOf( '.json' ) !== -1 )
 					{
 						name = href.replace( '.json', '' );
-						console.log( name, href );
-						continue;
+						//console.log( name, href );
+						//continue;
 						request.get( config.path + href,
 								function( error, response, body )
 								{
@@ -140,5 +140,5 @@ request.get( config.path,
 function processFileWithTags( name, href, tags )
 {
     // here should be placed the logic for the update of the DB
-	console.log( name, href );
+	console.log( name, href, tags );
 }
