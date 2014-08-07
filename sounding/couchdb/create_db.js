@@ -13,9 +13,6 @@ eval(fs.readFileSync('config.js') + '');
 var request = require('request');
 // Mircho addon for parsing .json files
 var DOMParser = require( 'xmldom' ).DOMParser;
-var config = {
-	path : 'http://home.rdrlab.com:85/other/freeSounds/01/'
-};
 
 var agentkeepalive = require('agentkeepalive');
 var myagent = new agentkeepalive({
@@ -35,12 +32,25 @@ nano.db.destroy( dbName, function() {
 	console.log( 'New Database \'' + dbName + '\' created.' );
 });
 
+var input1 = addToDb( config.path1 );
+var input2 = addToDb( config.path2 );
+var input3 = addToDb( config.path3 );
+var input4 = addToDb( config.path4 );
+var input5 = addToDb( config.path5 );
+var input6 = addToDb( config.path6 );
+var input7 = addToDb( config.path7 );
+var input8 = addToDb( config.path8 );
+var input9 = addToDb( config.path9 );
+var input10 = addToDb( config.path10 );
+
+function addToDb( path ) { 
 // Mircho's addon
-request.get( config.path,
+request.get( path,
 	function( error, response, body )
 	{
-		if( !error )
-	{
+		if( error ) { console.log( error ); }
+		else if( !error )
+		{
 		//here we have the body of the reponse
 		var doc = new DOMParser().parseFromString( body, 'text/html' );
 		var links = doc.documentElement.getElementsByTagName( 'a' );
@@ -55,13 +65,16 @@ request.get( config.path,
 				name = href.replace( '.json', '' );
 				//console.log( name, href );
 				//continue;
-				request.get( config.path + href,
+				request.get( path + href,
 					function( error, response, body )
 					{
 						if( !error )
 						{
 							var json = JSON.parse( body );
 							// console.log( json );
+							// add current location of the file into json
+							json.path = path;
+							// push to DB
 							sounding.insert( json, function( err, body, header) {
 								if (err) {
 									console.log('[error]', err.message);
@@ -80,6 +93,7 @@ request.get( config.path,
 	}
 }
 );
+}
 
 function processFileWithTags( name, href, tags )
 {
