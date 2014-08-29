@@ -1,14 +1,3 @@
-/*
- *  Main file for communication with CouchDB
- *
- *  Search for specific string using 'soundSearch' function.
- *  Return value has following syntax
- *      [ [ url + id + .wav, key ], [ url + id + .wav, key ] ]
- *  Example:
- *      [ [ 'http://home.rdrlab.com:85/other/freeSounds/10/159329.wav',
- *          'pera' ] ]
- */
-
 // close communication with the web server
 var agentkeepalive = require('agentkeepalive');
 var myagent = new agentkeepalive({
@@ -25,25 +14,31 @@ var nano = require('nano')(
 // db to use
 var sounding = nano.use('sounding');
 
-// search for string in given db with return values limit
-var a = soundSearch('sounding','by_word', "pepa", 1);
-//console.log(a);
+// variables
+var word2urlArray = [];
+var db = 'sounding';
+var view = 'by_word';
+var word = 'pista';
+var limitValue = 10;
 
-// returns key, url and id of the .wav file
-function soundSearch( db, view, word, limitValue ) {
-    var snd = [];
-    sounding.view( db, view, { startkey: word, limit: limitValue },
-            // snd = retValue(err, body, arr)
-            function(err, body) {
-            if (!err) {
-                body.rows.forEach(function(doc) {
-                    // console.log(doc.key, doc.value);
-                    snd.push([doc.value[0] + doc.value[1] + ".wav", doc.key]);
-                });
-                console.log(snd);
-                // return snd;
-            }
-            else { console.log(err); }
-    });
-}
+var word2url = function(key_, value_) {
+	word2urlArray.push({key:key_, value:value_});	
+	//console.log(key+':'+value);
+};
+
+// request to db
+sounding.view( db, view, { startkey: word, limit: limitValue },
+    function(err, body) {
+    if (!err) {
+
+	// for each row execute word2url function 
+	body.rows.forEach(function(doc) {
+	    word2url( doc.key, doc.value[0]);
+	});
+
+	// event trigger - word search finished ! TODOs
+	console.log(word2urlArray);
+    }
+    else { console.log(err); }
+});
 
