@@ -13,13 +13,17 @@ def processKeyTags(fileName):
     print(jj.keys())
     # print(jj["rows"])
     # for i in range(len(jj["rows"])):
-    for i in range(3):
+    for i in range(5):
         #print(jj["rows"][i]["key"] + " - " + jj["rows"][i]["value"])
         downloadWav(jj["rows"][i]["value"], jj["rows"][i]["key"] + ".wav")
 
 def downloadWav(url, name):
     #
     call(["wget " + url + " -O " + name], shell=True)
+    call(["normalize-audio " + name], shell=True)
+    print("\n")
+
+
 
 if __name__ == "__main__":
     sounds = getAllSounds("keyTags.json")
