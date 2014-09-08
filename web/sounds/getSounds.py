@@ -1,4 +1,5 @@
 import json
+import os.path
 from subprocess import call
 
 def getAllSounds(fileName):
@@ -12,17 +13,19 @@ def processKeyTags(fileName):
     jj = json.load(open(fileName))
     print(jj.keys())
     # print(jj["rows"])
-    # for i in range(len(jj["rows"])):
-    for i in range(5):
+    for i in range(len(jj["rows"])):
+    # for i in range(5):
         #print(jj["rows"][i]["key"] + " - " + jj["rows"][i]["value"])
-        downloadWav(jj["rows"][i]["value"], jj["rows"][i]["key"] + ".wav")
+        downloadWav(jj["rows"][i]["value"], jj["rows"][i]["key"].lower() + ".wav")
 
 def downloadWav(url, name):
     #
-    call(["wget " + url + " -O " + name], shell=True)
-    call(["normalize-audio " + name], shell=True)
-    print("\n")
-
+    if os.path.isfile(name):
+	pass
+    else:
+	call(["wget " + url + " -O " + name], shell=True)
+	call(["normalize-audio " + name], shell=True)
+	print("\n")
 
 
 if __name__ == "__main__":
